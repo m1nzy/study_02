@@ -1,8 +1,52 @@
 @charset "UTF-8";
+@import "./mixin.scss";
 
 // header
 #header {
-    border-bottom: 1px solid red;
+    position: fixed;
+    width: 100%;
+
+    .inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 85%;
+        margin: 0 auto;
+        padding-top: vw(30);
+    }
+    nav {
+        padding-right: vw(200);
+        font-size: 0;
+        transition: all 0.5s;
+        li {
+            display: inline-block;
+            position: relative;
+            font-size: vw(20);
+            font-weight: 500;
+            & + li {
+                margin-left: vw(80);
+            }
+            &:after{
+                content: '';
+                display: inline-block;
+                position: absolute;
+                bottom: -1px;
+                left: 0;
+                width: 0;
+                height: 1px;
+                background: #000;
+                transition: all 0.5s;
+            }
+            &:hover::after {
+                width: 100%;
+            }
+        }
+        &.fade_out {
+            opacity: 0;
+            visibility: hidden;
+            color: transparent;
+        }
+    }
 }
 
 // section

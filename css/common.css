@@ -1,5 +1,52 @@
+@charset "UTF-8";
+/* background size 기본값 100% 100% repeat 기본값 no-repeat이므로 기본값에서 달라지지 않는다면
+	@include background($url, $x, $y)로 작성
+*/
+/* vw 변환 function */
 #header {
-  border-bottom: 1px solid red;
+  position: fixed;
+  width: 100%;
+}
+#header .inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 85%;
+  margin: 0 auto;
+  padding-top: 1.5957446809vw;
+}
+#header nav {
+  padding-right: 10.6382978723vw;
+  font-size: 0;
+  transition: all 0.5s;
+}
+#header nav li {
+  display: inline-block;
+  position: relative;
+  font-size: 1.0638297872vw;
+  font-weight: 500;
+}
+#header nav li + li {
+  margin-left: 4.2553191489vw;
+}
+#header nav li:after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #000;
+  transition: all 0.5s;
+}
+#header nav li:hover::after {
+  width: 100%;
+}
+#header nav.fade_out {
+  opacity: 0;
+  visibility: hidden;
+  color: transparent;
 }
 
 section {

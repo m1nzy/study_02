@@ -1,4 +1,4 @@
-(function($) {
+(function ($) {
     'use strict';
 
     var $window = $(window),
@@ -6,33 +6,35 @@
         $html = $('html'),
         $head = $('head'),
         $body = $('body'),
+        $header = $('header'),
         $section = $('section'),
         $screen = $.screen,
         $inArray = $.inArray;
 
-    $(function() {
-        $window.on('scroll', function() {
+    $(function () {
+        $window.on('scroll', function () {
             var nowScroll = $window.scrollTop(),
-            $rowgroup = $('.rowgroup'),
-            $rowgroupBg = $rowgroup.find('.bg'),
-            rowgroupTop = $rowgroup.offset().top;
-            
+                lastScrollTop = 0,
+                $rowgroup = $('.rowgroup'),
+                $rowgroupBg = $rowgroup.find('.bg'),
+                rowgroupTop = $rowgroup.offset().top;
+        
+            // 헤더 nav 사라짐
+            if(nowScroll >= $header.innerHeight()) {
+                $header.find('nav').addClass('fade_out');
+            } else {
+                $header.find('nav').removeClass('fade_out');
+            }
+
             // rowgroup 도착시 배경 움직임
             // console.log('섹션 높이 :'+rowgroupTop + '-------- 현재 높이' + nowScroll);
-            $section.each(function() {
-                if(f == true) {
-                    if(1400 <= rowgroupTop) {
-                        var move = nowScroll * 0.02;
-                        $rowgroupBg.addClass('is_active');
-                        $rowgroupBg.css({'transform':'translateX(' + move + 'px)'})
-                        if((nowScroll - 600) > rowgroupTop || 1400 > nowScroll) {
-                            move = 48;
-                            $rowgroupBg.removeClass('is_active');
-                            $rowgroupBg.css({'transform':'translateX(' + move + 'px)'})
-                        }
-                    }
-                }
-            })
+            if (nowScroll > rowgroupTop) {
+                $rowgroupBg.addClass('is_active');
+                $rowgroupBg.css({'transform': 'translateX(60px)'})
+            } else {
+                $rowgroupBg.removeClass('is_active');
+                $rowgroupBg.css({'transform': 'translateX(0)'})
+            }
         })
     });
 })(jQuery);
