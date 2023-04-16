@@ -1,0 +1,6 @@
+@charset "UTF-8";
+*{padding: 0; margin: 0; box-sizing: border-box;}
+body{color: #282728;}
+ul, ol, li{list-style: none;}
+button{background: transparent; border: none;}
+img{max-width: 100%; height: auto;}

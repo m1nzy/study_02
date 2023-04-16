@@ -1,0 +1,58 @@
+@charset "UTF-8";
+/* background size 기본값 100% 100% repeat 기본값 no-repeat이므로 기본값에서 달라지지 않는다면
+	@include background($url, $x, $y)로 작성
+*/
+/* vw 변환 function */
+#container .rowgroup {
+  position: relative;
+  min-height: auto;
+  padding: 4.2553191489vw 0vw 6.3829787234vw;
+  overflow: hidden;
+}
+#container .rowgroup .inner {
+  position: relative;
+  width: 90%;
+  margin: 0 auto;
+  z-index: 1;
+}
+#container .rowgroup span {
+  position: absolute;
+  top: 1.170212766vw;
+  left: 0;
+}
+#container .rowgroup .text_wrap {
+  width: 60%;
+  margin: 0 auto;
+  word-break: keep-all;
+}
+#container .rowgroup .text_wrap h2 {
+  margin-bottom: 5.3191489362vw;
+  font-size: 3.1914893617vw;
+}
+#container .rowgroup .text_wrap b {
+  display: block;
+  width: 90%;
+  font-size: 3.1914893617vw;
+}
+#container .rowgroup .more_group {
+  margin-top: 4.2553191489vw;
+}
+#container .rowgroup .more_group button {
+  min-width: 11.7021276596vw;
+  height: 2.3936170213vw;
+  border-radius: 1.7553191489vw;
+  background: yellow;
+  font-weight: 600;
+}
+#container .rowgroup .bg {
+  position: absolute;
+  top: 30%;
+  left: -4.2553191489vw;
+  width: 130%;
+  height: 21.2765957447vw;
+  transition: all 1s;
+}
+#container .rowgroup .bg img {
+  width: 100%;
+  height: 100%;
+}

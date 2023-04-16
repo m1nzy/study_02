@@ -1,0 +1,7 @@
+#header {
+  border-bottom: 1px solid red;
+}
+
+section {
+  min-height: 100vh;
+}
